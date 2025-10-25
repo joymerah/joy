@@ -1,0 +1,644 @@
+/* Variabel Warna WhatsApp/Joy Collection */
+:root {
+    /* Warna WhatsApp API */
+    --color-whatsapp-green-grad-start: #fb3654; 
+    --color-whatsapp-green-grad-end: #fb3654;
+    --color-whatsapp-dark-footer: #222e35;
+    
+    /* Warna Brand Joy Collection */
+    --color-primary: #ffffff; /* Putih (untuk background atau teks) */
+    --color-secondary: #fb3654; /* Merah Muda */
+    --color-text-dark: #3e4243; /* Abu-abu Tua */
+    --color-cta-green: #3e4243; /* Hijau CTA WhatsApp */
+    --color-cta-green-hover: #fb3654; 
+    
+    /* Mode Gelap */
+    --dark-bg: #111b21;
+    --dark-text: #e9edef;
+    --dark-card-bg: #222e35;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------------------------------- */
+/* Dark Mode */
+/* ---------------------------------- */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+body.dark-mode .navbar {
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .navbar a, 
+body.dark-mode .actions button {
+    color: var(--dark-text);
+}
+body.dark-mode .design-card,
+body.dark-mode .service-card {
+    background-color: var(--dark-card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* ... Tambahkan gaya dark mode untuk semua elemen ... */
+
+
+/* ---------------------------------- */
+/* 1. Navbar */
+/* ---------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.logo img {
+    height: 50px; /*url(logo joy newbaru.png)*/
+}
+.menu-center a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    margin: 0 15px;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+}
+.menu-center a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+.menu-center a:hover::after {
+    width: 100%;
+}
+.actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+    color: var(--color-text-dark);
+}
+
+/* ---------------------------------- */
+/* 2. Hero Section */
+/* ---------------------------------- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 5%; /* bg merah page merah */
+    /* Gradient WhatsApp */
+    background: linear-gradient(135deg, var(--color-whatsapp-green-grad-start) 0%, var(--color-whatsapp-green-grad-end) 100%); 
+    color: var(--color-primary);
+    min-height: 80vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.hero-content-kiri {
+    max-width: 50%;
+}
+.hero-content-kiri h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.hero-content-kiri p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero-content-kanan img {
+    max-width: 100%;
+    height: auto;
+    /* Efek 3D ringan */
+    transform: perspective(1000px) rotateY(0%); 
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Tombol CTA Gaya WhatsApp API */
+.whatsapp-style-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.cta-primary {
+    background-color: var(--color-cta-green);
+    color: var(--color-primary);
+}
+.cta-secondary {
+    background-color: var(--color-primary);
+    color: var(--color-cta-green);
+    border: 1px solid var(--color-cta-green);
+}
+.cta-primary:hover {
+    background-color: var(--color-cta-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffffff;
+}
+.cta-secondary:hover {
+    background-color: var(--color-cta-green);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffffff;
+}
+
+/* ---------------------------------- */
+/* 3. Update terbaru teNTANG Joy */
+/* ---------------------------------- */
+.marketplace-section {
+    padding: 4rem 5%;
+    text-align: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+.design-card {
+    background-color: var(--color-primary);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Untuk animasi fade-in */
+    transform: translateY(20px); /* Untuk animasi fade-in */
+}
+.design-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.design-card img {
+    width: 440px;
+    height: 440px;
+    object-fit: cover;
+}
+.card-info {
+    padding: 15px;
+}
+.btn-detail {
+    display: block;
+    text-align: center;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.btn-detail:hover {
+    background-color: #fb3654;
+}
+
+/* ---------------------------------- */
+/* 4. Portfolio Section (Gaya Clean WhatsApp API) */
+/* ---------------------------------- */
+.portfolio-section {
+    padding: 4rem 5%;
+    background-color: #f7f9fa; /* Warna latar belakang ringan ala WhatsApp */
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+body.dark-mode .portfolio-section {
+    background-color: var(--dark-card-bg);
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--color-text-dark);
+}
+body.dark-mode .section-title {
+    color: var(--dark-text);
+}
+.portfolio-item.clean-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    background-color: var(--color-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.item-media {
+    flex: 1;
+    max-width: 50%;
+}
+.item-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.item-description {
+    flex: 1;
+    padding: 40px;
+}
+.item-description h3 {
+    font-size: 1.8rem;
+    color: var(--color-cta-green); /* Warna aksen ala WhatsApp */
+    margin-bottom: 15px;
+}
+
+/* ---------------------------------- */
+/* 5. Services Section */
+/* ---------------------------------- */
+.services-section {
+    padding: 4rem 5%;
+    text-align: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+.service-card {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+body.dark-mode .service-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.service-icon {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+.service-card:hover .service-icon {
+    color: var(--color-cta-green);
+}
+/* Styling Global dan Container */
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0; /* Latar belakang abu-abu muda */
+    padding: 0px;
+}
+
+/* 5.1 Container Grid (Menggantikan 'grid grid-cols-2 md:grid-cols-4 gap-4') 🌟 */
+.card-grid-container {
+    display: grid;
+    /* Default: 2 kolom untuk layar kecil (mobile) */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* Menggantikan 'gap-4' */
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Media Query untuk Layar yang Lebih Besar (Menggantikan 'md:grid-cols-4') */
+@media (min-width: 768px) {
+    .card-grid-container {
+        /* 4 kolom untuk layar menengah ke atas (desktop/tablet) */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Styling Kartu Umum (Menggantikan 'flex flex-col items-center py-8 px-10 bg-white border border-zinc-800 rounded-2xl transition-all') */
+.data-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* Padding (Menggantikan 'py-8 px-10') */
+    padding: 32px 40px; 
+    
+    /* Dekorasi Box */
+    background-color: white;
+    border: 1px solid #000000; /* Border abu-abu muda, bukan hitam pekat */
+    border-radius: 16px; /* Menggantikan 'rounded-2xl' */
+    
+    /* Shadow Default (untuk kartu yang tidak hover) */
+    box-shadow: none; 
+    transition: all 0.3s ease-in-out;
+}
+
+/* ---------------------------------------------------- */
+/* Efek Hover dan Shadow Khusus Warna */
+/* ---------------------------------------------------- */
+
+/* Warna Default (Ganti sesuai keinginan jika tidak ingin mengikuti warna Google) */
+.data-card:hover {
+    transform: translate(-3px, -3px); /* Efek pergerakan saat hover */
+    /* Jika Anda ingin shadow mengikuti warna Google (seperti yang disiratkan oleh kelas Tailwind) */
+}
+
+/* Hover - Newsletter (Menggantikan shadow biru) */
+.newsletter:hover {
+    box-shadow: 5px 5px 0 rgba(66, 133, 244, 1);
+}
+
+/* Hover - Instagram (Menggantikan shadow kuning) */
+.instagram:hover {
+    box-shadow: 5px 5px 0 rgba(249, 171, 0, 1);
+}
+
+/* Hover - Youtube (Menggantikan shadow merah) */
+.youtube:hover {
+    box-shadow: 5px 5px 0 rgba(234, 67, 53, 1);
+}
+
+/* Hover - Facebook (Menggantikan shadow hijau) */
+.facebook:hover {
+    box-shadow: 5px 5px 0 rgba(52, 168, 83, 1);
+}
+
+/* Styling Teks */
+.label {
+    font-size: 0.9em;
+    color: #666; /* Warna abu-abu yang lebih lembut */
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 1.2em;
+    font-weight: bold; /* Menggantikan 'font-bold' */
+    color: #333;
+}
+/* ---------------------------------- */
+/* Contact Form */
+/* ---------------------------------- */
+.contact-section {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: #fb3654;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+body.dark-mode .contact-section {
+    background-color: var(--dark-card-bg);
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+}
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    border-color: #444;
+}
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-cta-green);
+    outline: none;
+}
+.contact-form .cta-primary {
+    justify-self: end;
+    width: auto;
+}
+
+/* ---------------------------------- */
+/* 6. Footer */
+/* ---------------------------------- */
+.footer {
+    background-color: var(--color-whatsapp-dark-footer); /* Hijau Tua ala Footer WhatsApp API */
+    color: #aebac1;
+    padding: 3rem 5%;
+    text-align: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #fb3654;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.footer-logo img {
+    height: 50px;
+}
+.social-links a {
+    color: #aebac1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--color-cta-green-hover);
+}
+.social-links i {
+    margin-right: 5px;
+}
+.footer-bottom-text {
+    font-size: 0.9rem;
+}
+
+/* ---------------------------------- */
+/* Mobile First Responsiveness */
+/* ---------------------------------- */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+    }
+    .hero-content-kiri,
+    .hero-content-kanan {
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+    .hero-content-kanan img {
+        transform: none; /* Hilangkan efek 3D di mobile */
+    }
+    .hero-content-kiri h1 {
+        font-size: 2.5rem;
+    }
+    .menu-center {
+        display: none; /* Sembunyikan menu navigasi di mobile */
+    }
+    .design-grid,
+    .services-grid {
+        grid-template-columns: 1fr; /* Satu kolom di mobile */
+    }
+    .portfolio-item.clean-style {
+        flex-direction: column;
+    }
+    .item-media,
+    .item-description {
+        max-width: 100%;
+    }
+    .item-media img {
+        height: 250px;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+}
+
+/* Animasi untuk scroll reveal akan ditambahkan di JS */
+
+/* Styling untuk Container (Menggantikan 'text-center space-y-4 flex flex-col items-center') */
+.container-pusat {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memusatkan elemen horizontal */
+    text-align: center; /* Memastikan teks di dalamnya terpusat */
+    gap: 16px; /* Menggantikan 'space-y-4' (asumsi 16px) */
+    padding: 20px;
+    font-family: "Plus Jakarta Sans", sans-serif; /* Opsional: tentukan font */
+}
+
+/* Styling untuk Judul Utama (Menggantikan 'h2' dengan semua properti kompleks) */
+.judul-utama {
+    /* Ukuran & Tata Letak */
+    width: 83.333333%; /* Menggantikan 'w-5/6' */
+    max-width: fit-content; /* Untuk memastikan width mengecil di layar besar, menggantikan 'md:w-fit' */
+    padding: 16px; /* Menggantikan 'p-4' */
+    
+    /* Dekorasi Box */
+    border: 1px solid #3f3f46; /* Menggantikan 'border border-zinc-800' */
+    background-color: #ff5a72; /* Menggantikan 'bg-sky-200' */
+    border-radius: 12px; /* Menggantikan 'rounded-xl' */
+    
+    /* Efek & Transisi */
+    position: relative; /* Wajib untuk penempatan ::before/::after */
+    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' dan 'hover:px-8' */
+}
+
+/* Efek Hover untuk Judul */
+.judul-utama:hover {
+    padding-left: 32px; /* Menggantikan 'hover:px-8' (asumsi 32px = 8 * 4px) */
+    padding-right: 32px; /* Menggantikan 'hover:px-8' (asumsi 32px = 8 * 4px) */
+}
+
+/* ---------------------------------------------------- */
+/* Dekorasi Kiri (Menggantikan '::before' yang kompleks) */
+/* ---------------------------------------------------- */
+.judul-utama::before {
+    content: '';
+    position: absolute;
+    width: 28px; /* Menggantikan 'w-7' (asumsi 28px = 7 * 4px) */
+    height: 100%;
+    border: 1px solid #3f3f46;
+    left: -28px; /* Menggantikan '-left-7' */
+    top: 0;
+    border-radius: 12px;
+    background-color: #fb3654; /* Menggantikan 'bg-sky-400' */
+    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' */
+    z-index: -1; /* Pastikan dekorasi di belakang teks h2 */
+}
+
+/* Efek Hover pada Dekorasi Kiri */
+.judul-utama:hover::before {
+    height: 66.6666%; /* Menggantikan 'hover:before:h-2/3' */
+    top: 50%; /* Pindahkan ke tengah agar efeknya dari bawah ke atas */
+    transform: translateY(-50%);
+}
+
+/* ----------------------------------------------------- */
+/* Dekorasi Kanan (Menggantikan '::after' yang kompleks) */
+/* ----------------------------------------------------- */
+.judul-utama::after {
+    content: '';
+    position: absolute;
+    width: 28px; /* Menggantikan 'w-7' */
+    height: 100%;
+    border: 1px solid #3f3f46;
+    right: -28px; /* Menggantikan '-right-7' */
+    bottom: 0;
+    border-radius: 12px;
+    background-color: #fb3654; /* Menggantikan 'bg-sky-400' */
+    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' */
+    z-index: -1; /* Pastikan dekorasi di belakang teks h2 */
+}
+
+/* Efek Hover pada Dekorasi Kanan */
+.judul-utama:hover::after {
+    height: 66.6666%; /* Menggantikan 'hover:after:h-2/3' */
+    bottom: 50%; /* Pindahkan ke tengah agar efeknya dari atas ke bawah */
+    transform: translateY(50%);
+}
+
+/* Styling untuk teks lain */
+.sub-judul {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.tanggal {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Media Query untuk Layar yang Lebih Besar (Opsional, untuk responsif) */
+@media (min-width: 768px) {
+    .judul-utama {
+        width: fit-content; /* Menggantikan 'md:w-fit' */
+    }
+}
+
+/*Blog*/
